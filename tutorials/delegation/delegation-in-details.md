@@ -1,8 +1,8 @@
-# Delegation in details
+# Delegation in detail
 
 ### Background
 
-The vote power token is the base contract for WSGB (wrapped native token) and later for xAssets (wrapped assets) on flare.
+The vote power token is the base contract for WSGB (wrapped native token) and later for fAssets, which are wrapped assets on flare.
 
 This token contract is built to enable delegation of vote power without locking the holder’s token. It works by adding the vote power and delegation functions to the ERC20 token contract. Basically, balance represents vote power; with the additional code, a holder can delegate a percentage of its own vote power to another address and still use their tokens freely. The `transfer/mint/burn` functions will immediately update the actual vote power being held by the delegator and the vote power of the address it delegates to.
 
@@ -23,7 +23,7 @@ This token is named VPToken (vote power token).
 
 Delegation enables a user to keep holding their balance (tokens) while delegating the vote power this balance represents. Two delegation methods are supported. The basic (normal) delegation is **delegation by percentage**, the other being **explicit delegation**.
 
-With percentage delegation, any address can delegate a percentage of its holding; this is limited to x addresses. Example: Alice has 20 tokens and delegates 50% to Bob, Bob will have additional vote power of 10 on the top of his own balance (own vote power). This means any transfer of tokens to or from Alice will update 50% of the delegated vote power to Bob. If Alice delegates to another address, each token transfer to or from Alice will update the vote power of those other  addresses. This in turn will cause higher gas costs for transfer functions. To cap those extra costs, this delegation option has a limited number of delegation destinations. In the case that an address (user or contract) wishes to delegate vote power to more addresses, they have the option of the **explicit delegation method**.
+With percentage delegation, any address can delegate a percentage of its holding; this is limited to x addresses. Example: Alice has 20 tokens and delegates 50% to Bob, Bob will have additional vote power of 10 on the top of his own balance (own vote power). This means any transfer of tokens to or from Alice will update 50% of the delegated vote power to Bob. If Alice delegates to another address, each token transfer to or from Alice will update the vote power of those other addresses. This in turn will cause higher gas costs for transfer functions. To cap those extra costs, this delegation option has a limited number of delegation destinations. In the case that an address (user or contract) wishes to delegate vote power to more addresses, they have the option of the **explicit delegation method**.
 
 With **explicit delegation**, an explicit amount of vote power is delegated. While useful, this does create more complications for the user since the balance corresponding to the delegated vote power can’t be transferred. For example, if Alice has 20 tokens and explicitly delegates vote power of 20 to Bob, the delegated balance is actually locked. Alice can’t send out these tokens unless the 20 vote power is explicitly undelegated. Another complication here is that for each new token received, a new delegate operation has to be performed; vote power will not be automatically delegated upon token receival.
 
@@ -50,8 +50,6 @@ The above delegation scheme creates a mapping from balance to vote power for eac
 #### Voting campaigns using vote power token <a href="#user-content-voting-campaigns-using-vote-power-token" id="user-content-voting-campaigns-using-vote-power-token"></a>
 
 Checkpointed vote power data are used in voting campaigns (reward epochs). A voting campaign uses a randomly chosen block number from the past (vote power block). When an address (data provider) casts its vote for a specific campaign, its vote power is taken from the vote power block for this campaign. Hence, the vote power of an address for this campaign does not reflect its present balance and delegation but rather the state at the time of the snapshot (in the vote power block). This design allows for a free use of tokens (non-locked) and a consistent vote power snapshot of token holdings. Voting campaigns are a generic concept; in FTSO system, the vote power of price providers is used as an influence in choosing the “correct price”. Each price submission is weighted according to the vote power scheme described here.
-
-
 
 ### Vote power caching and the revoke feature <a href="#user-content-vote-power-caching-and-the-revoke-feature" id="user-content-vote-power-caching-and-the-revoke-feature"></a>
 
@@ -80,8 +78,8 @@ To recap, historical delegation APIs exist. For percentage delegations, each add
 
 ![Vote power block selection diagram](<../../.gitbook/assets/votepower diagram.svg>)
 
-The vote power of each price provider is cached and only recalculated at the start of each reward epoch. The selected vote power block (snap shot block) for a new epoch is selected randomly once the reward epoch starts_._ It is selected randomly with uniform probability from the last quarter of mined blocks. This can **roughly** be approximated as taking the random block in the last quarter time-wise, but is **not necessarily correct**, as block mining density can change.&#x20;
+The vote power of each price provider is cached and only recalculated at the start of each reward epoch. The selected vote power block (snap shot block) for a new epoch is selected randomly once the reward epoch starts\_.\_ It is selected randomly with uniform probability from the last quarter of mined blocks. This can **roughly** be approximated as taking the random block in the last quarter time-wise, but is **not necessarily correct**, as block mining density can change.
 
-**Example:** &#x20;
+**Example:**
 
 Reward epoch with index `10` started at block `2487672` with timestamp `1637397708` (Saturday, November 20, 2021 8:41:48 AM GMT) and lasted until block `3003881` with timestamp `1638002503` (Saturday, November 27, 2021 8:41:43 AM GMT). This means that `516209` blocks were mined in this epoch and the last quarter of the blocks started with the block number `2487672 + 129052 = 2874828` with timestamp `1637817710` (Thursday, November 25, 2021 5:21:50 AM GMT). Any block between `2874828` and `3003881` is therefore eligible for selection as the vote power block. In this reward epoch, block `2881097` with timestamp `1637825442` (Thursday, November 25, 2021 7:30:42 AM GMT) was selected. This is before the last quarter of the week (Thursday, November 25, 2021 2:41:33 PM GMT) if we were to take the timestamp measure.

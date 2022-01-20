@@ -7,12 +7,12 @@
 ## Networks
 
 * [🐦 Songbird Canary Network](networks/songbird.md)
-* [👩🔬 Coston Test Network](networks/coston-testnet.md)
+* [👩🔬 👩🔬 Coston Test Network](networks/coston-testnet.md)
 
 ## Tutorials
 
 * [Delegation](tutorials/delegation/README.md)
-  * [Delegation in details](tutorials/delegation/delegation-in-details.md)
+  * [Delegation in detail](tutorials/delegation/delegation-in-details.md)
 * [Delegation FAQ](tutorials/delegation-faq/README.md)
   * [block explorer + metamask](tutorials/delegation-faq/block-explorer-+-metamask.md)
 * [Reward claiming](tutorials/reward-claiming/README.md)
