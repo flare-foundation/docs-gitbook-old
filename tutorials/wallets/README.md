@@ -26,3 +26,6 @@ Check out tutorials that will help you access Flare Network with your wallet. Co
 [how-to-access-flare-network-with-metamask.md](how-to-access-flare-network-with-metamask.md)
 {% endcontent-ref %}
 
+{% content-ref url="safepal-s1-wallet.md" %}
+[safepal-s1-wallet.md](safepal-s1-wallet.md)
+{% endcontent-ref %}

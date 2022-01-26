@@ -7,7 +7,7 @@
 ## Networks
 
 * [🐦 Songbird Canary Network](networks/songbird.md)
-* [👩🔬 👩🔬 Coston Test Network](networks/coston-testnet.md)
+* [👩🔬 👩🔬 👩🔬 Coston Test Network](networks/coston-testnet.md)
 
 ## Tutorials
 
@@ -25,6 +25,7 @@
   * [MetaMask](tutorials/wallets/how-to-access-flare-network-with-metamask.md)
   * [Ledger Nano X and Ledger Nano S](tutorials/wallets/how-to-access-flare-network-with-a-ledger-device.md)
   * [Trezor T](tutorials/wallets/how-to-access-flare-network-with-a-trezor-device.md)
+  * [SafePal S1 Wallet](tutorials/wallets/safepal-s1-wallet.md)
 * [Developing on top of Flare](tutorials/developing-on-top-of-flare/README.md)
   * [Important links](tutorials/developing-on-top-of-flare/important-links.md)
 * [Price provider](tutorials/price-provider/README.md)
