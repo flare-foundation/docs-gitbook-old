@@ -7,7 +7,7 @@
 ## Networks
 
 * [🐦 Songbird Canary Network](networks/songbird.md)
-* [👩🔬 👩🔬 👩🔬 Coston Test Network](networks/coston-testnet.md)
+* [👩🔬 👩🔬 👩🔬 👩🔬 Coston Test Network](networks/coston-testnet.md)
 
 ## Tutorials
 
