@@ -1,6 +1,11 @@
-# Flare Network Documentation
+# Technical Documentation
 
-Welcome to the Flare Network documentation. Information about how Flare works at the network-level is available here.
+Welcome to the **Flare Network Technical Documentation** site!
 
-Join the Flare community on [Discord](https://discord.gg/XqNa7Rq) for FAQ's and if you have any other questions or feedback.
+Here you can find descriptions about the [Technology](broken-reference) and [Tutorials](broken-reference) to get you started.
 
+{% hint style="warning" %}
+These pages are a **Work In Progress**.
+
+Join the Flare community on [Discord](https://discord.gg/XqNa7Rq) if there is anything you cannot find here.
+{% endhint %}

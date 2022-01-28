@@ -1,6 +1,6 @@
 # Table of contents
 
-* [Flare Network Documentation](README.md)
+* [Technical Documentation](README.md)
 
 ## Technology
 
@@ -10,7 +10,7 @@
 ## Networks
 
 * [🐦 Songbird Canary Network](networks/songbird.md)
-* [👩🔬 Coston Test Network](networks/coston-testnet.md)
+* [👩🔬 👩🔬 Coston Test Network](networks/coston-testnet.md)
 
 ## Tutorials
 
