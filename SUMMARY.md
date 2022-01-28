@@ -1,6 +1,9 @@
 # Table of contents
 
 * [Flare Network Documentation](README.md)
+
+## Technology
+
 * [🛰 State Connector](state-connector.md)
 * [⛏ Multi-Chain Merge Mining](validators.md)
 
