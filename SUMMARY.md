@@ -23,6 +23,7 @@
 * [Reward FAQ](tutorials/reward-faq/README.md)
   * [Block explorer + metamask](tutorials/reward-faq/block-explorer-+-metamask.md)
 * [Wallets](tutorials/wallets/README.md)
+  * [Page 1](tutorials/wallets/page-1.md)
   * [Bifrost Wallet](tutorials/wallets/bifrost-wallet.md)
   * [D'CENT Wallet](tutorials/wallets/dcent-wallet.md)
   * [MetaMask](tutorials/wallets/how-to-access-flare-network-with-metamask.md)
