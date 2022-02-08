@@ -2,13 +2,13 @@
 description: How to connect your Ledger hardware wallet to the Songbird network
 ---
 
-# Ledger Nano X and Ledger Nano S
+# Ledger Nano X and Nano S
 
 Hardware wallets are considered among the more secure options to manage crypto assets and store private keys. Your crypto assets can remain safe, even if your computer or phone is compromised, as long as you keep your recovery phrase safe and review all transaction details before confirming transactions.
 
 ## Getting Started
 
-To use your Ledger device with Songbird (SGB), first make sure that you have:&#x20;
+To use your Ledger device with Songbird (SGB), first make sure that you have:
 
 1. Initialized your Ledger device with a recovery phrase
 2. Protected your Ledger device with a PIN code
@@ -49,14 +49,14 @@ You can access Songbird by using your Ledger device with the [MetaMask browser e
 
     d) Enter symbol: **SGB**
 
-    e) Enter block explorer URL: **https://songbird-explorer.flare.network**&#x20;
+    e) Enter block explorer URL: **https://songbird-explorer.flare.network**
 
     f) Click Save
 3. Select Songbird in the networks dropdown
 4. Connect your Ledger device using USB
 5. Open the Songbird app on your Ledger device
-6. If Ledger Live is still running, you must now close it out on your computer
-7. In Advanced Settings ensure that the ‘Preferred Ledger Connection Type’ is set to “WebHID” in the drop-down menu (it should be the case by default)
+6. If Ledger Live is still running, you must now quit the app on your computer
+7. In Advanced Settings ensure that the ‘Preferred Ledger Connection Type’ is set to “WebHID” in the drop-down menu (it should be the case by default).
 8. Click your account image and Connect Hardware Wallet
 9. A pop up box will appear listing paired Human Interface Devices (HID). Highlight your Ledger S or Ledger X and click Connect
 10. Select your Account and click Unlock

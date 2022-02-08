@@ -1,4 +1,4 @@
-# Reward claiming in details
+# Reward claiming in detail
 
 ## FTSO Rewards
 
@@ -6,7 +6,7 @@ During the FTSO price voting process, rewards are being distributed to price (da
 
 ### Reward claiming
 
-Reward claiming process depends on vote power delegation mode. The default delegation mode is delegation by percentage. Delegation by amount is intended for advanced users. The delegation mode of a user can be checked by calling `delegationModeOf` on the WNAT contract that implements  the`IVPToken` interface.
+The reward claiming process depends on the vote power delegation mode. The default delegation mode is delegation by percentage. Delegation by amount is intended for advanced users. The delegation mode of a user can be checked by calling `delegationModeOf` on the WNAT contract that implements the`IVPToken` interface.
 
 #### Delegation by percentage
 
@@ -24,12 +24,12 @@ function claimReward(
 Parameters:
 
 * `_recipient`: The address to which the reward is transferred (can be different from the calling address).
-* `_rewardEpochs`: The list of reward epoch ids for which the reward is being claimed.
+* `_rewardEpochs`: The list of reward epoch IDs for which the reward is being claimed.
 * `_rewardAmount`: The amount of claimed rewards that is transferred to `_recipient`. The amount is the sum of all rewards that the caller (`msg.sender`) is entitled to in the specified `_rewardEpochs` (i.e., it includes the unclaimed rewards for all price providers the user has delegated to).
 
 Note that this function throws an exception if it is called by a user (`msg.sender`) that is delegating by amount.
 
-To specify an appropriate input array `_rewardEpochs`, the function `getEpochsWithUnclaimedRewards` can be used. It iterates over the past reward epochs that still enable reward claiming and gathers the ids of those, for which the reward allocated to `_beneficiary` has not yet been (fully) claimed.
+To specify an appropriate input array `_rewardEpochs`, the function `getEpochsWithUnclaimedRewards` can be used. It iterates over the past reward epochs that still enable reward claiming and gathers the IDs of those, for which the reward allocated to `_beneficiary` has not yet been (fully) claimed.
 
 ```
 function getEpochsWithUnclaimedRewards(
@@ -60,7 +60,7 @@ function claimRewardFromDataProviders(
 Parameters:
 
 * `_recipient`: The address to which the reward is transferred (can be different from the calling address).
-* `_rewardEpochs`: The list of reward epoch ids for which the reward is being claimed.
+* `_rewardEpochs`: The list of reward epoch IDs for which the reward is being claimed.
 * `_dataProviders`: The list of addresses corresponding to price providers.
 * `_rewardAmount`: The amount of claimed rewards that is transferred to `_recipient`. The amount is the sum of all rewards that the caller (`msg.sender`) is entitled to in the specified `_rewardEpochs` (i.e., it includes the unclaimed rewards for all price providers specified in `_dataProviders`).
 
@@ -94,7 +94,7 @@ Parameters:
 * `dataProvider`: The address to which the reward was allocated.
 * `whoClaimed`: The address from which the reward claim was initiated.
 * `sentTo`: The address to which the `amount` was sent.
-* `rewardEpoch`: The id of the reward epoch the claimed reward corresponds to.
+* `rewardEpoch`: The ID of the reward epoch the claimed reward corresponds to.
 * `amount`: The value of the claimed reward.
 
 #### Reward claim expiry
@@ -166,7 +166,7 @@ function getStateOfRewardsFromDataProviders(
 Parameters:
 
 * `_beneficiary`: The address for which the state is being checked.
-* `_rewardEpoch`: The id of the reward epoch for which the state is being checked.
+* `_rewardEpoch`: The ID of the reward epoch for which the state is being checked.
 * `_dataProviders`: The positional array of addresses representing the price providers the rewards have been allocated to.
 * `_rewardAmounts`: The positional array of values representing the reward amounts the `_beneficiary` is entitled to.
 * `_claimed`: The positional array of boolean values indicating if the reward amount has already been claimed.
@@ -208,8 +208,7 @@ Parameters:
 
 * `_dataProvder`: The address representing a price provider.
 * `_feePercentageBIPS`: The positional array of scheduled fee percentages in BIPS.
-* `validFromEpoch`: The positional array of future reward epoch ids from which the value `_feePercentageBIPS` will be effective.
+* `validFromEpoch`: The positional array of future reward epoch IDs from which the value `_feePercentageBIPS` will be effective.
 * `_fixed`: The positional array of boolean values indicating if the setting is fixed.
 
 If the scheduled fee percentage is not fixed, this means that it can still be updated by price provider over the course of the current reward epoch. After the current reward epoch passes, the setting becomes fixed.
-
