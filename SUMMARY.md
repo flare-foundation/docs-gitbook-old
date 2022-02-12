@@ -5,7 +5,6 @@
 ## Technology
 
 * [🛰 State Connector](state-connector.md)
-* [⛏ Multi-Chain Merge Mining](validators.md)
 
 ## Networks
 
